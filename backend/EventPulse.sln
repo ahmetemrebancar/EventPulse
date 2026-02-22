@@ -3,12 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventPulse.API", "EventPulse.API\EventPulse.API.csproj", "{AC1D5FB7-F18B-47A9-863A-096776E539D3}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventPulse.Core", "EventPulse.Core\EventPulse.Core.csproj", "{8C987D9F-D85A-45D8-9668-DC40E6DDFFDA}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventPulse.Infrastructure", "EventPulse.Infrastructure\EventPulse.Infrastructure.csproj", "{37B64846-06DA-4EF7-A7FC-A5918208D2C9}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{827E0CD3-B72D-47B6-A68D-7590B98EB39B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventPulse.API", "src\EventPulse.API\EventPulse.API.csproj", "{F7F3C35B-8694-43C3-A8D3-BB890805F692}"
@@ -27,42 +21,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{AC1D5FB7-F18B-47A9-863A-096776E539D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AC1D5FB7-F18B-47A9-863A-096776E539D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AC1D5FB7-F18B-47A9-863A-096776E539D3}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{AC1D5FB7-F18B-47A9-863A-096776E539D3}.Debug|x64.Build.0 = Debug|Any CPU
-		{AC1D5FB7-F18B-47A9-863A-096776E539D3}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{AC1D5FB7-F18B-47A9-863A-096776E539D3}.Debug|x86.Build.0 = Debug|Any CPU
-		{AC1D5FB7-F18B-47A9-863A-096776E539D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AC1D5FB7-F18B-47A9-863A-096776E539D3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AC1D5FB7-F18B-47A9-863A-096776E539D3}.Release|x64.ActiveCfg = Release|Any CPU
-		{AC1D5FB7-F18B-47A9-863A-096776E539D3}.Release|x64.Build.0 = Release|Any CPU
-		{AC1D5FB7-F18B-47A9-863A-096776E539D3}.Release|x86.ActiveCfg = Release|Any CPU
-		{AC1D5FB7-F18B-47A9-863A-096776E539D3}.Release|x86.Build.0 = Release|Any CPU
-		{8C987D9F-D85A-45D8-9668-DC40E6DDFFDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8C987D9F-D85A-45D8-9668-DC40E6DDFFDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8C987D9F-D85A-45D8-9668-DC40E6DDFFDA}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{8C987D9F-D85A-45D8-9668-DC40E6DDFFDA}.Debug|x64.Build.0 = Debug|Any CPU
-		{8C987D9F-D85A-45D8-9668-DC40E6DDFFDA}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{8C987D9F-D85A-45D8-9668-DC40E6DDFFDA}.Debug|x86.Build.0 = Debug|Any CPU
-		{8C987D9F-D85A-45D8-9668-DC40E6DDFFDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8C987D9F-D85A-45D8-9668-DC40E6DDFFDA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8C987D9F-D85A-45D8-9668-DC40E6DDFFDA}.Release|x64.ActiveCfg = Release|Any CPU
-		{8C987D9F-D85A-45D8-9668-DC40E6DDFFDA}.Release|x64.Build.0 = Release|Any CPU
-		{8C987D9F-D85A-45D8-9668-DC40E6DDFFDA}.Release|x86.ActiveCfg = Release|Any CPU
-		{8C987D9F-D85A-45D8-9668-DC40E6DDFFDA}.Release|x86.Build.0 = Release|Any CPU
-		{37B64846-06DA-4EF7-A7FC-A5918208D2C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{37B64846-06DA-4EF7-A7FC-A5918208D2C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{37B64846-06DA-4EF7-A7FC-A5918208D2C9}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{37B64846-06DA-4EF7-A7FC-A5918208D2C9}.Debug|x64.Build.0 = Debug|Any CPU
-		{37B64846-06DA-4EF7-A7FC-A5918208D2C9}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{37B64846-06DA-4EF7-A7FC-A5918208D2C9}.Debug|x86.Build.0 = Debug|Any CPU
-		{37B64846-06DA-4EF7-A7FC-A5918208D2C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{37B64846-06DA-4EF7-A7FC-A5918208D2C9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{37B64846-06DA-4EF7-A7FC-A5918208D2C9}.Release|x64.ActiveCfg = Release|Any CPU
-		{37B64846-06DA-4EF7-A7FC-A5918208D2C9}.Release|x64.Build.0 = Release|Any CPU
-		{37B64846-06DA-4EF7-A7FC-A5918208D2C9}.Release|x86.ActiveCfg = Release|Any CPU
-		{37B64846-06DA-4EF7-A7FC-A5918208D2C9}.Release|x86.Build.0 = Release|Any CPU
 		{F7F3C35B-8694-43C3-A8D3-BB890805F692}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F7F3C35B-8694-43C3-A8D3-BB890805F692}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7F3C35B-8694-43C3-A8D3-BB890805F692}.Debug|x64.ActiveCfg = Debug|Any CPU

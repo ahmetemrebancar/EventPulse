@@ -81,11 +81,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ahmet\\Desktop\\EventPulse\\EventPulse\\backend\\EventPulse.API\\EventPulse.API.csproj",
+      "projectUniqueName": "C:\\Users\\ahmet\\Desktop\\EventPulse\\EventPulse\\backend\\src\\EventPulse.API\\EventPulse.API.csproj",
       "projectName": "EventPulse.API",
-      "projectPath": "C:\\Users\\ahmet\\Desktop\\EventPulse\\EventPulse\\backend\\EventPulse.API\\EventPulse.API.csproj",
+      "projectPath": "C:\\Users\\ahmet\\Desktop\\EventPulse\\EventPulse\\backend\\src\\EventPulse.API\\EventPulse.API.csproj",
       "packagesPath": "C:\\Users\\ahmet\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ahmet\\Desktop\\EventPulse\\EventPulse\\backend\\EventPulse.API\\obj\\",
+      "outputPath": "C:\\Users\\ahmet\\Desktop\\EventPulse\\EventPulse\\backend\\src\\EventPulse.API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

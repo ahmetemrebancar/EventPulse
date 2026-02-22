@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ahmet\\Desktop\\EventPulse\\EventPulse\\backend\\EventPulse.Infrastructure\\EventPulse.Infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\ahmet\\Desktop\\EventPulse\\EventPulse\\backend\\src\\EventPulse.Infrastructure\\EventPulse.Infrastructure.csproj",
       "projectName": "EventPulse.Infrastructure",
-      "projectPath": "C:\\Users\\ahmet\\Desktop\\EventPulse\\EventPulse\\backend\\EventPulse.Infrastructure\\EventPulse.Infrastructure.csproj",
+      "projectPath": "C:\\Users\\ahmet\\Desktop\\EventPulse\\EventPulse\\backend\\src\\EventPulse.Infrastructure\\EventPulse.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\ahmet\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ahmet\\Desktop\\EventPulse\\EventPulse\\backend\\EventPulse.Infrastructure\\obj\\",
+      "outputPath": "C:\\Users\\ahmet\\Desktop\\EventPulse\\EventPulse\\backend\\src\\EventPulse.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ahmet\\Desktop\\EventPulse\\EventPulse\\backend\\EventPulse.Core\\EventPulse.Core.csproj": {}
+    "C:\\Users\\ahmet\\Desktop\\EventPulse\\EventPulse\\backend\\src\\EventPulse.Core\\EventPulse.Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ahmet\\Desktop\\EventPulse\\EventPulse\\backend\\EventPulse.Core\\EventPulse.Core.csproj": {
+    "C:\\Users\\ahmet\\Desktop\\EventPulse\\EventPulse\\backend\\src\\EventPulse.Core\\EventPulse.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ahmet\\Desktop\\EventPulse\\EventPulse\\backend\\EventPulse.Core\\EventPulse.Core.csproj",
+        "projectUniqueName": "C:\\Users\\ahmet\\Desktop\\EventPulse\\EventPulse\\backend\\src\\EventPulse.Core\\EventPulse.Core.csproj",
         "projectName": "EventPulse.Core",
-        "projectPath": "C:\\Users\\ahmet\\Desktop\\EventPulse\\EventPulse\\backend\\EventPulse.Core\\EventPulse.Core.csproj",
+        "projectPath": "C:\\Users\\ahmet\\Desktop\\EventPulse\\EventPulse\\backend\\src\\EventPulse.Core\\EventPulse.Core.csproj",
         "packagesPath": "C:\\Users\\ahmet\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ahmet\\Desktop\\EventPulse\\EventPulse\\backend\\EventPulse.Core\\obj\\",
+        "outputPath": "C:\\Users\\ahmet\\Desktop\\EventPulse\\EventPulse\\backend\\src\\EventPulse.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
