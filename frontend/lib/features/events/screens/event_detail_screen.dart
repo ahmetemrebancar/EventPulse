@@ -30,9 +30,9 @@ class _EventDetailScreenState extends ConsumerState<EventDetailScreen> {
   }
 
   Future<void> _initSignalR() async {
-    // ÖNEMLİ: Android Emülatör için 'http://10.0.2.2:5000/hub/events' kullanmalısın!
+    // Android Emülatör için 'http://10.0.2.2:5000/hub/events' kullanmalıdır.
     // iOS veya Web için 'http://localhost:5000/hub/events'
-    const hubUrl = 'http://10.0.2.2:5001/hub/events'; 
+    const hubUrl = 'http://localhost:5000/hub/events'; 
 
     _hubConnection = HubConnectionBuilder()
         .withUrl(hubUrl)

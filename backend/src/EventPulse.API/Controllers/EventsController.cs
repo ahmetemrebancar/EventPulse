@@ -151,7 +151,7 @@ public class EventsController : ControllerBase
         _context.UserAttendances.Add(attendance);
         await _context.SaveChangesAsync(); // Veritabanına kaydedildi
        
-        // 🟡 REDIS CACHE INVALIDATION: Etkinliğe katılım oldu, liste güncellenmeli! 
+        // REDIS CACHE INVALIDATION: Etkinliğe katılım oldu, liste güncellenmeli! 
         if (_redis != null)
         {
             var db = _redis.GetDatabase();
@@ -162,7 +162,7 @@ public class EventsController : ControllerBase
             }
         }
 
-        // 🟢 SIGNALR BROADCAST: Güncel sayıyı hesapla ve o etkinliğin odasındaki (Group) herkese fırlat
+        //  SIGNALR BROADCAST: Güncel sayıyı hesapla ve o etkinliğin odasındaki (Group) herkese fırlat
         var currentCount = ev.Attendances.Count + 1;
         await _hubContext.Clients.Group($"Event_{id}").SendAsync("ReceiveAttendeeUpdate", id, currentCount);
 
@@ -182,7 +182,7 @@ public class EventsController : ControllerBase
         _context.UserAttendances.Remove(attendance);
         await _context.SaveChangesAsync(); // Veritabanından silindi
 
-        // 🟡 REDIS CACHE INVALIDATION
+        //  REDIS CACHE INVALIDATION
         if (_redis != null)
         {
             var db = _redis.GetDatabase();
@@ -193,7 +193,7 @@ public class EventsController : ControllerBase
             }
         }
 
-        // 🔴 SIGNALR BROADCAST: Güncel sayıyı hesapla ve fırlat
+        // SIGNALR BROADCAST: Güncel sayıyı hesapla ve fırlat
         var currentCount = await _context.UserAttendances.CountAsync(a => a.EventId == id);
         await _hubContext.Clients.Group($"Event_{id}").SendAsync("ReceiveAttendeeUpdate", id, currentCount);
 

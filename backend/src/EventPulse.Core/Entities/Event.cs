@@ -8,7 +8,7 @@ public class Event
     public string City { get; set; } = string.Empty;
     public string Category { get; set; } = string.Empty;
     public DateTime StartDate { get; set; }
-    public int MaxCapacity { get; set; } // MaxCapacity > 0 kısıtı eklenecek 
+    public int MaxCapacity { get; set; }  
     
     // Navigation Properties
     public ICollection<UserAttendance> Attendances { get; set; } = new List<UserAttendance>();

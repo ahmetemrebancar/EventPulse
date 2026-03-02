@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/event_model.dart';
-import 'package:intl/intl.dart'; // Tarih formatlama için (flutter pub add intl)
-import '../screens/event_detail_screen.dart'; // Bu import'u ekle
+import 'package:intl/intl.dart'; 
+import '../screens/event_detail_screen.dart';
 
 class EventCard extends StatelessWidget {
   final EventModel event;
@@ -45,7 +45,7 @@ class EventCard extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 8),
-              // İŞTE BURASI: Hero Animasyonu Başlangıç Noktası
+              // Hero Animasyonu Başlangıç Noktası
               Hero(
                 tag: 'event_title_${event.id}',
                 child: Material(

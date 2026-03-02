@@ -1,15 +1,16 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../models/event_model.dart';
-import '../models/event_detail_model.dart'; // İŞTE EKLENMESİ GEREKEN SATIR BU
-import 'auth_provider.dart'; // Bu importu en üste ekle
+import '../models/event_detail_model.dart'; 
+import 'auth_provider.dart'; 
+
 // API İstekleri için Dio Sağlayıcısı
 // ÖNEMLİ: Android Emülatör kullanıyorsan localhost yerine '10.0.2.2' kullanmalısın.
 // iOS Simülatör veya Web kullanıyorsan 'localhost' kalabilir.
 // API İstekleri için Dio Sağlayıcısı (Interceptor eklendi)
 final dioProvider = Provider<Dio>((ref) {
   final dio = Dio(BaseOptions(
-    baseUrl: 'http://10.0.2.2:5001/api', // Emülatör için 10.0.2.2 unutma!
+    baseUrl: 'http://localhost:5000/api', // Emülatörde kullanmak için localhost yerine 10.0.2.2 konulması gerekir.
     connectTimeout: const Duration(seconds: 5),
   ));
 
@@ -19,7 +20,6 @@ final dioProvider = Provider<Dio>((ref) {
       // AuthProvider'dan mevcut token'ı oku
       final authState = ref.read(authProvider);
       if (authState.isAuthenticated) {
-        // Token varsa Header'a (Bearer olarak) ekle
         options.headers['Authorization'] = 'Bearer ${authState.token}';
       }
       return handler.next(options);

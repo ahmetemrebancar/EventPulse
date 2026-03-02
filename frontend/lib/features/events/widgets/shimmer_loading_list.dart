@@ -7,7 +7,7 @@ class ShimmerLoadingList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: 6, // Ekranda 6 tane sahte kart gösterelim
+      itemCount: 6, // Ekranda 6 tane sahte kart gösterir
       padding: const EdgeInsets.all(16),
       itemBuilder: (context, index) {
         return Shimmer.fromColors(

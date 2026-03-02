@@ -31,7 +31,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
-// 🟡 BONUS: Firebase ID Token Doğrulama Middleware'i
+//  Firebase ID Token Doğrulama Middleware'i
 var firebaseProjectId = "eventpulseqberx"; // Buraya kendi Firebase Project ID'ni yazmalısın
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

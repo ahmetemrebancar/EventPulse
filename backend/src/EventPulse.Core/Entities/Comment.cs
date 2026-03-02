@@ -5,7 +5,7 @@ public class Comment
     public int Id { get; set; }
     public int EventId { get; set; }
     public string UserId { get; set; } = string.Empty;
-    public string Content { get; set; } = string.Empty; // Max 500 characters 
+    public string Content { get; set; } = string.Empty; 
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
     // Navigation Properties

@@ -31,8 +31,7 @@ public class AppDbContext : DbContext
         // 4. SEED DATA (Başlangıç Verileri)
         // ---------------------------------------------------
         
-        // ÖNEMLİ: Seed data içinde DateTime.UtcNow kullanmak her build'de yeni migration 
-        // oluşmasına sebep olabileceği için sabit (fixed) tarihler kullanıyoruz.
+        // Seed data içinde DateTime.UtcNow kullanmak her build'de yeni migration oluşmasına sebep olabileceği için sabit (fixed) tarihler kullanıyoruz.
         var event1Date = new DateTime(2026, 5, 15, 14, 0, 0, DateTimeKind.Utc);
         var event2Date = new DateTime(2026, 6, 20, 19, 30, 0, DateTimeKind.Utc);
         var commentDate = new DateTime(2026, 3, 1, 10, 0, 0, DateTimeKind.Utc);

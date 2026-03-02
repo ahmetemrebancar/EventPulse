@@ -4,8 +4,8 @@ import '../providers/events_provider.dart';
 import '../widgets/event_card.dart';
 import '../widgets/shimmer_loading_list.dart';
 import 'event_detail_screen.dart';
-// ConsumerStatefulWidget kullanıyoruz çünkü hem Riverpod'u (ref) dinleyeceğiz 
-// hem de kaydırma(scroll) hareketlerini takip edeceğiz.
+
+// ConsumerStatefulWidget kullanıyoruz çünkü hem Riverpod'u (ref) dinleyeceğiz hem de kaydırma(scroll) hareketlerini takip edeceğiz.
 class EventsListScreen extends ConsumerStatefulWidget {
   const EventsListScreen({super.key});
 
