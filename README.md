@@ -2,12 +2,6 @@
 
 Bu proje, şehirdeki etkinlikleri (konser, workshop, spor vb.) anlık olarak listeleyen, kullanıcıların katılım bildirebildiği ve yorumlarını paylaşabildiği "Junior Part-Time Developer" vaka çalışması için geliştirilmiş monorepo (frontend + backend) projesidir.
 
-## 📹 Proje Demo Videosu
-> **Değerlendiricinin Dikkatine:** Projenin local ortamda baştan sona çalışır halini, mimari kararları ve SignalR canlı veri akışını gösteren tanıtım videosunu aşağıdan izleyebilirsiniz:
-> 👉 `[YouTube / Loom Video Linkinizi Buraya Yapıştırın]`
-
----
-
 ## 🛠️ Teknik Stack & Mimari
 
 Proje, birbirinden tamamen izole iki katmanlı (Monorepo) bir yapıda geliştirilmiştir:
@@ -61,7 +55,11 @@ EventPulse/
 │   │   │   └── events/               # Event Listesi, Detay Ekranı, Shimmer, SignalR
 │   │   └── main.dart                 # Uygulama Başlangıç Noktası
 └── docker-compose.yml        # Tüm altyapıyı ayağa kaldıran Docker konfigürasyonu
-⚙️ Projeyi Local'de Ayağa Kaldırma
+```
+
+---
+
+## ⚙️ Projeyi Local'de Ayağa Kaldırma
 Değerlendiricinin veritabanı veya önbellek sunucusu kurmasına gerek kalmadan, tüm backend altyapısı Docker üzerinden çalıştırılabilir. Alternatif olarak manuel kurulum adımları da aşağıda belirtilmiştir.
 
 Seçenek 1: Docker ile Tek Tıkla Kurulum (Önerilen)
@@ -69,31 +67,40 @@ Seçenek 1: Docker ile Tek Tıkla Kurulum (Önerilen)
 
 Terminalde projenin ana dizininde (docker-compose.yml dosyasının bulunduğu yerde) şu komutu çalıştırın:
 
-Bash
+
+```bash
 docker-compose up -d --build
+```
+
 Bu komut; PostgreSQL 16'yı, Redis'i ve .NET 8 API'sini otomatik olarak ayağa kaldıracak, veritabanı tablolarını ve Seed verilerini oluşturacaktır.
-API yayına girdikten sonra http://localhost:5000/swagger adresinden test edebilirsiniz.
+API yayına girdikten sonra `http://localhost:5000/swagger` adresinden test edebilirsiniz.
 
 Seçenek 2: Manuel Kurulum
 Ön Koşullar: .NET 8 SDK, PostgreSQL (5432) ve opsiyonel olarak Redis (6379).
 
-Bash
-cd backend
-# Migration'ları veritabanına uygulayın
-dotnet ef database update --project src/EventPulse.Infrastructure --startup-project src/EventPulse.API
 
+  ```bash
+cd backend
+  ```
+# Migration'ları veritabanına uygulayın
+```bash
+dotnet ef database update --project src/EventPulse.Infrastructure --startup-project src/EventPulse.API
+```
 # Projeyi çalıştırın
+```bash
 dotnet run --project src/EventPulse.API
+```
 📱 Frontend (Mobil Uygulama) Kurulumu
 Yeni bir terminal sekmesi açın ve frontend klasörüne gidin:
 
-Bash
+```bash
 cd frontend
 flutter pub get
 flutter run
-🚨 ÖNEMLİ NOT (Android Emülatör İçin): Uygulamayı Android emülatörde çalıştırıyorsanız, Android'in ağ yapısı gereği lib/features/events/providers/events_provider.dart ve event_detail_screen.dart dosyalarındaki API URL'lerini http://localhost:5000 yerine http://10.0.2.2:5000 olarak değiştirmeniz gerekmektedir. iOS Simülatör için localhost kalabilir.
+```
+🚨 ÖNEMLİ NOT (Android Emülatör İçin): Uygulamayı Android emülatörde çalıştırıyorsanız, Android'in ağ yapısı gereği lib/features/events/providers/events_provider.dart ve event_detail_screen.dart dosyalarındaki API URL'lerini `http://localhost:5000` yerine `http://10.0.2.2:5000` olarak değiştirmeniz gerekmektedir. iOS Simülatör için localhost kalabilir.
 
-💡 Kullanım Senaryosu (Test Adımları)
+## 💡 Kullanım Senaryosu (Test Adımları)
 Giriş: Uygulama açıldığında Login ekranı gelir. Herhangi bir kullanıcı adı yazın ve şifre olarak 123456 girin (Mock doğrulama testi).
 
 Listeleme: Ana sayfada Redis Cache ve Shimmer efekti ile hızlıca yüklenen etkinlik listesini görün.
@@ -104,7 +111,7 @@ Detay ve Animasyon: Etkinliklerden birine tıklayıp Hero animasyonu ile kusursu
 
 Gerçek Zamanlı İletişim (SignalR): Detay sayfasındayken Katıl butonuna basın. Aynı anda hem HTTP POST başarı mesajını hem de SignalR üzerinden broadcast edilen anlık değişen canlı katılımcı sayısını gözlemleyin. Aynı butona tekrar basarak "Duplicate" kuralını test edin.
 
-👨‍💻 Geliştirici
+## 👨‍💻 Geliştirici
 Ahmet Emre Bancar
 Computer Engineering Student, Istanbul University-Cerrahpaşa | President of Computer Society
 
