@@ -54,8 +54,11 @@ EventPulse/
 │   │   │   ├── auth/                 # Login Ekranı ve Auth Provider
 │   │   │   └── events/               # Event Listesi, Detay Ekranı, Shimmer, SignalR
 │   │   └── main.dart                 # Uygulama Başlangıç Noktası
-└── docker-compose.yml        # Tüm altyapıyı ayağa kaldıran Docker konfigürasyonu
-⚙️ Projeyi Local'de Ayağa Kaldırma
+└── docker-compose.yml        # Tüm altyapıyı ayağa kaldıran Docker konfigürasyonu```
+
+---
+
+##⚙️ Projeyi Local'de Ayağa Kaldırma
 Değerlendiricinin veritabanı veya önbellek sunucusu kurmasına gerek kalmadan, tüm backend altyapısı Docker üzerinden çalıştırılabilir. Alternatif olarak manuel kurulum adımları da aşağıda belirtilmiştir.
 
 Seçenek 1: Docker ile Tek Tıkla Kurulum (Önerilen)
@@ -98,7 +101,7 @@ Detay ve Animasyon: Etkinliklerden birine tıklayıp Hero animasyonu ile kusursu
 
 Gerçek Zamanlı İletişim (SignalR): Detay sayfasındayken Katıl butonuna basın. Aynı anda hem HTTP POST başarı mesajını hem de SignalR üzerinden broadcast edilen anlık değişen canlı katılımcı sayısını gözlemleyin. Aynı butona tekrar basarak "Duplicate" kuralını test edin.
 
-👨‍💻 Geliştirici
+## 👨‍💻 Geliştirici
 Ahmet Emre Bancar
 Computer Engineering Student, Istanbul University-Cerrahpaşa | President of Computer Society
 
