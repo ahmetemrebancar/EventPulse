@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../providers/auth_provider.dart'; 
+import '../../auth/screens/login_screen.dart'; 
 import '../providers/events_provider.dart';
 import '../widgets/event_card.dart';
 import '../widgets/shimmer_loading_list.dart';
@@ -41,9 +43,27 @@ class _EventsListScreenState extends ConsumerState<EventsListScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('EventPulse', style: TextStyle(fontWeight: FontWeight.bold)),
-        centerTitle: true,
-      ),
+        title: const Text('EventPulse'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.logout),
+            tooltip: 'Çıkış Yap',
+            onPressed: () async {
+              // 1. Provider üzerinden logout metodunu tetikle
+              await ref.read(authProvider.notifier).logout();
+
+              // 2. Kullanıcıyı Login ekranına at ve Geri (Back) tuşu geçmişini tamamen temizle
+              if (context.mounted) {
+                Navigator.of(context).pushAndRemoveUntil(
+                  MaterialPageRoute(builder: (context) => const LoginScreen()), 
+                  (Route<dynamic> route) => false, 
+                );
+              }
+            },
+          ),
+        ],
+      ), 
+      
       // AsyncValue'nun gücü: Duruma göre otomatik UI değiştirme
       body: eventsState.when(
         // 1. Yükleniyor Durumu (Shimmer Efekti)
@@ -88,10 +108,9 @@ class _EventsListScreenState extends ConsumerState<EventsListScreen> {
                 }
 
                 final event = events[index];
-return EventCard(
+                return EventCard(
                   event: event,
                   onTap: () {
-                    //tODO ve print silindi, yerine gerçek yönlendirme eklendi!
                     Navigator.push(
                       context,
                       MaterialPageRoute(

@@ -35,10 +35,14 @@ class AuthNotifier extends Notifier<AuthState> {
     }
   }
 
-  // Çıkış Yapma Fonksiyonu
-  void logout() {
-    state = AuthState(); // State'i sıfırla
-  }
+    Future<void> logout() async {
+  // 1. Kaydedilmiş JWT token'ını sil (Örnek: SharedPreferences kullanıyorsan)
+  // final prefs = await SharedPreferences.getInstance();
+  // await prefs.remove('jwt_token');
+
+  // 2. State'i temizle (Başlangıçtaki boş duruma geri dön)
+    state = AuthState(); 
+}
 }
 
 // StateNotifierProvider yerine NotifierProvider kullanıyoruz
