@@ -54,7 +54,7 @@ EventPulse/
 │   │   │   ├── auth/                 # Login Ekranı ve Auth Provider
 │   │   │   └── events/               # Event Listesi, Detay Ekranı, Shimmer, SignalR
 │   │   └── main.dart                 # Uygulama Başlangıç Noktası
-└── docker-compose.yml        # Tüm altyapıyı ayağa kaldıran Docker konfigürasyonu```
+└── docker-compose.yml        # Tüm altyapıyı ayağa kaldıran Docker konfigürasyonu ˊˊˊ
 
 ---
 
