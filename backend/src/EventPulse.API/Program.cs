@@ -1,19 +1,72 @@
-var builder = WebApplication.CreateBuilder(args);
+using EventPulse.Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
+using System.Security.Cryptography;
+using Microsoft.IdentityModel.Tokens;
+using StackExchange.Redis;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
-// Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
+var builder = WebApplication.CreateBuilder(args);
+// Redis Bağlantısı (Singleton olarak tüm uygulamaya dağıtılır)
+try 
+{
+    var multiplexer = ConnectionMultiplexer.Connect("localhost:6379");
+    builder.Services.AddSingleton<IConnectionMultiplexer>(multiplexer);
+}
+catch (Exception ex)
+{
+    // Redis ayakta değilse uygulama çökmesin diye logluyoruz
+    Console.WriteLine($"Redis bağlantı hatası (Cache pasif): {ex.Message}");
+}
+
+// RS256 için Bellek İçi (In-Memory) RSA Anahtarı Üretimi
+var rsaKey = RSA.Create();
+var securityKey = new RsaSecurityKey(rsaKey);
+builder.Services.AddSingleton(securityKey);
+
+// DbContext Kaydı (PostgreSQL bağlantı dizesi ile)
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+// .NET 8 Swagger/OpenAPI Yapılandırması
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+builder.Services.AddControllers();
+// 🟡 BONUS: Firebase ID Token Doğrulama Middleware'i
+var firebaseProjectId = "eventpulseqberx"; // Buraya kendi Firebase Project ID'ni yazmalısın
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.Authority = $"https://securetoken.google.com/{firebaseProjectId}";
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidIssuer = $"https://securetoken.google.com/{firebaseProjectId}",
+            ValidateAudience = true,
+            ValidAudience = firebaseProjectId,
+            ValidateLifetime = true
+        };
+    });
+
+builder.Services.AddAuthorization();
+builder.Services.AddSignalR();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Geliştirme ortamı için Swagger Arayüzü
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
 
 app.UseHttpsRedirection();
+app.UseAuthentication();
+app.UseAuthorization();
+app.MapControllers();
+app.MapHub<EventPulse.API.Hubs.EventHub>("/hub/events");
 
+// Test için varsayılan WeatherForecast Endpoint'i
 var summaries = new[]
 {
     "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
