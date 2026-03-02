@@ -67,7 +67,8 @@ Seçenek 1: Docker ile Tek Tıkla Kurulum (Önerilen)
 
 Terminalde projenin ana dizininde (docker-compose.yml dosyasının bulunduğu yerde) şu komutu çalıştırın:
 
-<pre>Bash
+<pre>
+  ```Bash
   docker-compose up -d --build
 </pre>
 Bu komut; PostgreSQL 16'yı, Redis'i ve .NET 8 API'sini otomatik olarak ayağa kaldıracak, veritabanı tablolarını ve Seed verilerini oluşturacaktır.
@@ -76,8 +77,10 @@ API yayına girdikten sonra `http://localhost:5000/swagger` adresinden test edeb
 Seçenek 2: Manuel Kurulum
 Ön Koşullar: .NET 8 SDK, PostgreSQL (5432) ve opsiyonel olarak Redis (6379).
 
-Bash
+<pre>
+  ```Bash
 cd backend
+  </pre>
 # Migration'ları veritabanına uygulayın
 `dotnet ef database update --project src/EventPulse.Infrastructure --startup-project src/EventPulse.API`
 
