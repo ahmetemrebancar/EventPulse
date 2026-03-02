@@ -86,6 +86,13 @@ app.MapGet("/weatherforecast", () =>
 })
 .WithName("GetWeatherForecast");
 
+// Uygulama başlarken bekleyen Migration'ları veritabanına otomatik uygula
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<EventPulse.Infrastructure.Data.AppDbContext>();
+    dbContext.Database.Migrate(); 
+}
+
 app.Run();
 
 record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
