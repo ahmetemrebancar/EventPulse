@@ -83,17 +83,21 @@ Seçenek 2: Manuel Kurulum
 cd backend
   ```
 # Migration'ları veritabanına uygulayın
-`dotnet ef database update --project src/EventPulse.Infrastructure --startup-project src/EventPulse.API`
-
+```bash
+dotnet ef database update --project src/EventPulse.Infrastructure --startup-project src/EventPulse.API
+```
 # Projeyi çalıştırın
-`dotnet run --project src/EventPulse.API`
+```bash
+dotnet run --project src/EventPulse.API
+```
 📱 Frontend (Mobil Uygulama) Kurulumu
 Yeni bir terminal sekmesi açın ve frontend klasörüne gidin:
 
-Bash
-`cd frontend`
-`flutter pub get`
-`flutter run`
+```bash
+cd frontend
+flutter pub get
+flutter run
+```
 🚨 ÖNEMLİ NOT (Android Emülatör İçin): Uygulamayı Android emülatörde çalıştırıyorsanız, Android'in ağ yapısı gereği lib/features/events/providers/events_provider.dart ve event_detail_screen.dart dosyalarındaki API URL'lerini `http://localhost:5000` yerine `http://10.0.2.2:5000` olarak değiştirmeniz gerekmektedir. iOS Simülatör için localhost kalabilir.
 
 ## 💡 Kullanım Senaryosu (Test Adımları)
