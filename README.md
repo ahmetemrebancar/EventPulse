@@ -2,12 +2,6 @@
 
 Bu proje, şehirdeki etkinlikleri (konser, workshop, spor vb.) anlık olarak listeleyen, kullanıcıların katılım bildirebildiği ve yorumlarını paylaşabildiği "Junior Part-Time Developer" vaka çalışması için geliştirilmiş monorepo (frontend + backend) projesidir.
 
-## 📹 Proje Demo Videosu
-> **Değerlendiricinin Dikkatine:** Projenin local ortamda baştan sona çalışır halini, mimari kararları ve SignalR canlı veri akışını gösteren tanıtım videosunu aşağıdan izleyebilirsiniz:
-> 👉 `[YouTube / Loom Video Linkinizi Buraya Yapıştırın]`
-
----
-
 ## 🛠️ Teknik Stack & Mimari
 
 Proje, birbirinden tamamen izole iki katmanlı (Monorepo) bir yapıda geliştirilmiştir:
