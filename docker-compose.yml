@@ -25,15 +25,15 @@ services:
       dockerfile: Dockerfile
     container_name: eventpulse_api
     environment:
-      # API'nin Docker içindeki veritabanına bağlanması için gereken ayar
+      - ASPNETCORE_ENVIRONMENT=Development
       - ConnectionStrings__DefaultConnection=Host=db;Database=EventPulseDb;Username=admin;Password=password123
-      # API'nin Docker içindeki Redis'e bağlanması için gereken ayar
       - Redis__Configuration=cache:6379
     ports:
       - "5000:8080"
     depends_on:
       - db
       - cache
+    restart: on-failure
 
 volumes:
   postgres_data:
